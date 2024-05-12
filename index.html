@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	
+	<body>
+		<script>
+            window.onload = function () {
+                const title = "自用静态超链接服务（无跨域限制）"
+                // 如有增删改，只需更新 context 即可
+                const list = [
+                    {
+                        title: "图片",
+                        type: "img",
+                        context: [
+                            "巨人/户户/S1EP22.png",
+                            "巨人/户户/S4EP8.png",
+	                        "巨人/户户/S4EP9.png",
+                            "巨人/户户/S4EP22.png",
+	                        "巨人/户户/Snipaste_2024-05-12_16-14-12.png",
+	                        "巨人/户户/Snipaste_2024-05-12_16-17-43.png",
+	                        "巨人/户户/Snipaste_2024-05-12_16-24-19.png",
+	                        "巨人/户户/“打死我都不承认我会哭”.png",
+	                        "巨人/户户/不泪之誓1.0.png",
+	                        "巨人/户户/完结篇下.png",
+	                        "巨人/户户/我再也....png",
+                            "vue.png",
+                            "vuerouter.jpg"
+                        ],
+                    },
+                    {
+                        title: "GIF",
+                        type: "gif",
+                        context: ["可爱动物.gif"],
+                    },
+                    {
+                        title: "SVG",
+                        type: "svg",
+                        context: ["dark.svg", "day.svg", "pure.svg", "react.svg", "vue.svg", "smile1.svg", "smile2.svg", "smile3.svg", "smile4.svg", "smile5.svg"],
+                    },
+                    {
+                        title: "音频（点开会自动播放，建议提前调低音量）",
+                        type: "audio",
+                        context: ["光辉岁月.mp3", "海阔天空.mp3"],
+                    },
+                    {
+                        title: "PDF",
+                        type: "pdf",
+                        context: ["Cookie和Session区别用法.pdf"],
+                    },
+                    {
+                        title: "JSON",
+                        type: "json",
+                        context: ["echarts.json", "province-info.json"],
+                    },
+                    {
+                        title: "其他文件",
+                        type: "other",
+                        context: ["excel.xlsx", "pure-upload.csv", "pure-upload.txt", "pure-upload.xlsx", "word.docx"],
+                    },
+                ]
+
+                document.title = title
+
+                const ta = document.createElement("a")
+                ta.href = "https://github.com/long36708/hyperlink"
+                ta.title = "查看源码"
+                ta.target = "_blank"
+                ta.textContent = title
+                ta.style.fontSize = "2em"
+                ta.style.textDecoration = "none"
+                document.body.appendChild(ta)
+
+                for (let i = 0; i < list.length; i++) {
+                    const h2 = document.createElement("h2")
+                    h2.textContent = list[i].title
+                    document.body.appendChild(h2)
+
+                    for (let j = 0; j < list[i].context.length; j++) {
+                        const a = document.createElement("a")
+                        a.href = `./${list[i].type}/${list[i].context[j]}`
+                        a.target = "_blank"
+                        a.textContent = `${list[i].context[j]}`
+                        document.body.appendChild(a)
+                        document.body.appendChild(document.createElement("br"))
+                    }
+                }
+            };
+		</script>
+	</body>
+
+</html>

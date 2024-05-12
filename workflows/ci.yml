@@ -15,3 +15,8 @@ jobs:
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: hyperlink
+          branch: gh-pages
+          folder: /
+          single-commit: true
